@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata >
+    <id>WcfLibraryTemplate</id>
+    <version>1.1.1</version>
+    <authors>Kirill Kovalev</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>WCF Methods Encapsulation Class</description>
+    <language>en-US</language>
+    <projectUrl>http://server10.instaforex.com:2012/api/DataServices/Packages.svc</projectUrl>
+    <tags>WCF</tags>
+  </metadata>
+  <files>
+    <file src="..\bin\WcfLibraryTemplate.dll" target="lib\net40" />
+  </files>
+</package>

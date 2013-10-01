@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata >
+    <id>TypeConverter</id>
+    <version>1.0.1</version>
+    <authors>Kirill Kovalev, Nikita Gusev</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Reflection type converter</description>
+    <language>en-US</language>
+    <projectUrl>http://server10.instaforex.com:2012/api/DataServices/Packages.svc</projectUrl>
+    <tags>Type</tags>
+  </metadata>
+  <files>
+    <file src="..\bin\TypeConverter.dll" target="lib\net40" />
+  </files>
+</package>
