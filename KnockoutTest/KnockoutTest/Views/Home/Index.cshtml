@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2>With Knockout</h2>
+<span>Item number</span><span data-bind="text: itemNumber"></span>
+<br/>
+<span>Guitar model:</span><input data-bind="value: model"/>
+<span>Sales price:</span><input data-bind="value: salePrice"/>
+
+<br/>
+<br/>
+
+<span>Item number</span><span id="testSpan" data-bind="text: itemNumber"></span>
+
+
+
+<input id="ButtonTest" type="button" value="button" />
+
+@section scripts
+{
+    <script type="text/javascript">
+        var product = {
+            itemNumber: ko.observable("T314CE"),
+            model: ko.observable("Taylor 314ce"),
+            salePrice: ko.observable(1199.95)
+        };
+
+        $(document).ready(function() {
+            ko.applyBindings(product);
+            product.itemNumber.subscribe(function (newValue) {
+                alert("itemNumber " + newValue);
+            });
+        });
+
+        $("#ButtonTest").click(function () {
+            product.itemNumber("OLOLO");
+        });
+    </script>
+}
