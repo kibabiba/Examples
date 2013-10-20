@@ -1,0 +1,51 @@
+﻿@using System.Web.Mvc.Html
+@model IEnumerable<MvcTest.Models.Databases.holidays>
+
+@{
+    ViewBag.Title = "Каникулы";
+}
+
+<h2>Каникулы</h2>
+
+<p>
+    @Html.ActionLink("Добавить событие", "Create")
+</p>
+<table class="table table-condensed table-bordered tablesorter">
+    <thead>
+        <tr>
+            <th>
+                Время
+            </th>
+            <th>
+                Событие
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.day_time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.desc)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    @Html.ActionLink("Назад", "Index", "Home")
+</div>
+
+@section scripts
+{
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("table").tablesorter();
+        }
+);
+    </script>
+}

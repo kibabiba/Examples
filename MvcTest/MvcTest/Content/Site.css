@@ -1,0 +1,262 @@
+﻿html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td
+{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+body
+{
+    line-height: 150%;
+}
+
+ol, ul
+{
+    list-style: none;
+}
+
+blockquote, q
+{
+    quotes: none;
+}
+
+    blockquote:before, blockquote:after, q:before, q:after
+    {
+        content: '';
+        content: none;
+    }
+
+:focus
+{
+    outline: 0;
+}
+
+body
+{
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+}
+
+a img
+{
+    border: none 0;
+}
+
+    a img:hover
+    {
+        border: none 0;
+    }
+
+a, a:hover
+{
+    cursor: pointer;
+}
+
+ul
+{
+    margin: 0 0 5px 0;
+    padding: 0px;
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+    ul li
+    {
+        padding-left: 22px;
+    }
+
+table td
+{
+    text-align: left;
+}
+
+h1, h2, h3
+{
+    background-color: transparent;
+    color: #444444;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 0 6px;
+}
+
+h2
+{
+    font-size: 16px;
+}
+
+h3
+{
+    font-size: 14px;
+}
+
+h4, h5, h6
+{
+    font-size: 14px;
+    font-weight: normal;
+}
+
+body
+{
+    background-color: #e4e6e0;
+    color: #323232;
+    line-height: 170%;
+}
+
+table td
+{
+    line-height: 170%;
+}
+
+a
+{
+    color: #0033cc;
+    text-decoration: underline;
+}
+
+    a:hover
+    {
+        color: #111111;
+    }
+
+    a:visited
+    {
+        color: #569aff;
+    }
+
+input, textarea
+{
+    border: 1px solid #b2b2b2;
+    padding: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-family: Arial,Helvetica,sans-serif;
+}
+
+    input:focus, textarea:focus
+    {
+        border: 1px solid #569aff;
+        box-shadow: 0 0 8px rgba(82,168,236,0.5);
+        -moz-box-shadow: 0 0 8px rgba(82,168,236,0.5);
+        -webkit-box-shadow: 0 0 8px rgba(82,168,236,0.5);
+    }
+
+small
+{
+    font-size: 11px;
+    color: #b0b0b0;
+}
+
+.center, .center div, .center table
+{
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.left
+{
+    float: left;
+}
+
+.right
+{
+    float: right;
+}
+
+.content
+{
+    margin: 10px auto;
+    width: 1000px;
+    min-width: 500px;
+    border: solid 1px #68c215;
+    box-shadow: 0 0 10px #7ee221;
+    -moz-box-shadow: 0 0 10px #7ee221;
+    -webkit-box-shadow: 0 0 10px #7ee221;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.head
+{
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    overflow: hidden;
+}
+
+.page-content
+{
+    padding: 10px;
+}
+
+.button
+{
+    border-top: 1px solid #99db63;
+    background: #a1d665;
+    background: -webkit-gradient(linear,left top,left bottom,from(#2ac446),to(#a1d665));
+    background: -moz-linear-gradient(top,#2ac446,#a1d665);
+    background: -o-linear-gradient(top,#2ac446,#a1d665);
+    padding: 5px 10px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,0.4) 0 1px 0;
+    color: white;
+    font-size: 14px;
+    font-family: Helvetica,Arial,Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+    .button:hover
+    {
+        color: #666666;
+        background: #a1d665;
+        background: -webkit-gradient(linear,left top,left bottom,from(#409c3e),to(#a1d665));
+        background: -moz-linear-gradient(top,#409c3e,#a1d665);
+        background: -o-linear-gradient(top,#409c3e,#a1d665);
+    }
+
+    .button:active
+    {
+        border-top-color: #d8de25;
+        background: #d8de25;
+    }
+
+    /* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}

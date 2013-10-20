@@ -1,0 +1,44 @@
+﻿@using System.Web.Mvc.Html
+@{
+    ViewBag.Title = "Главная";
+}
+
+@section scripts{
+    <script>
+        $("#BtnAjaxJquery").click(function () {
+            $.ajax({
+                type: "POST",
+                url: "/Default/TestAjax?a=1",
+                data: $.param({ b: 2 }),
+                contentType: "application/x-www-form-urlencoded",
+                dataType: "json",
+                success: function (data) {
+                    alert(data.Name + data.GetParam + data.PostParam);
+                }
+            });
+        });
+
+        function SomeCtrl($scope, $http) {
+            $scope.AngularPost = function () {
+                $http({
+                    method: 'POST',
+                    url: "/Default/TestAjax?a=1",
+                    data: $.param({ b: 2 }),
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' }
+                }).success(function (data) {
+                    alert(data.Name + data.GetParam + data.PostParam);
+                });
+            };
+        }
+    </script>
+}
+
+<h2>Главная</h2>
+<div data-ng-controller="SomeCtrl">
+    <input id="BtnAjaxJquery" type="button" value="Тест Jquery Ajax" class="btn-success" />
+    <input type="button" value="Тест Angular Ajax" class="btn-danger" data-ng-click="AngularPost()" />
+
+    <div style="margin-top: 50px">
+        @Html.ActionLink("Назад", "Index", "Home")
+    </div>
+</div>

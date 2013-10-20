@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Duris4eDbModel" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Хранилище Duris4eDbModelContainer">
+          <EntitySet Name="h_dates" EntityType="Хранилище Duris4eDbModel.h_dates" store:Type="Tables" Schema="gb_am_storage" />
+          <EntitySet Name="holidays" EntityType="Хранилище Duris4eDbModel.holidays" store:Type="Tables" Schema="gb_am_storage" />
+        </EntityContainer>
+        <EntityType Name="h_dates">
+          <Key>
+            <PropertyRef Name="day" />
+          </Key>
+          <Property Name="day" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="holidays">
+          <Key>
+            <PropertyRef Name="day_time" />
+          </Key>
+          <Property Name="day_time" Type="datetime" Nullable="false" />
+          <Property Name="desc" Type="varchar" MaxLength="200" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Duris4eDbModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Duris4eDbEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="h_dates" EntityType="Duris4eDbModel.h_dates" />
+          <EntitySet Name="holidays" EntityType="Duris4eDbModel.holidays" />
+        </EntityContainer>
+        <EntityType Name="h_dates">
+          <Key>
+            <PropertyRef Name="day" />
+          </Key>
+          <Property Name="day" Type="DateTime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="holidays">
+          <Key>
+            <PropertyRef Name="day_time" />
+          </Key>
+          <Property Name="day_time" Type="DateTime" Nullable="false" />
+          <Property Name="desc" Type="String" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Duris4eDbModelContainer" CdmEntityContainer="Duris4eDbEntities">
+          <EntitySetMapping Name="h_dates">
+            <EntityTypeMapping TypeName="Duris4eDbModel.h_dates">
+              <MappingFragment StoreEntitySet="h_dates">
+                <ScalarProperty Name="day" ColumnName="day" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="holidays">
+            <EntityTypeMapping TypeName="Duris4eDbModel.holidays">
+              <MappingFragment StoreEntitySet="holidays">
+                <ScalarProperty Name="day_time" ColumnName="day_time" />
+                <ScalarProperty Name="desc" ColumnName="desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

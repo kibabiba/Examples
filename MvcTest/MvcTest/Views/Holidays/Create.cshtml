@@ -1,0 +1,45 @@
+﻿@using System.Web.Mvc.Html
+@model MvcTest.Models.Databases.holidays
+
+@{
+    ViewBag.Title = "Каникулы";
+}
+
+<h2>Каникулы</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Добавить событие</legend>
+
+        <div>
+            @Html.LabelFor(model => model.day_time)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.day_time)
+            @Html.ValidationMessageFor(model => model.day_time, "Неверный формат даты")
+        </div>
+
+        <div>
+            @Html.LabelFor(model => model.desc)
+        </div>
+        <div>
+            @Html.EditorFor(model => model.desc)
+            @Html.ValidationMessageFor(model => model.desc)
+        </div>
+
+        <p>
+            <input type="submit" value="Создать" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Назад", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
