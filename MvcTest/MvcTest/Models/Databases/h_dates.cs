@@ -9,9 +9,6 @@
 
 namespace MvcTest.Models.Databases
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class h_dates
     {
         public System.DateTime day { get; set; }

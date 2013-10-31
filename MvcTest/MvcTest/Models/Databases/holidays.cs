@@ -11,9 +11,6 @@ using System.ComponentModel;
 
 namespace MvcTest.Models.Databases
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class holidays
     {
         [DisplayName("Дата")]
