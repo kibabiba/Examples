@@ -31,7 +31,7 @@ namespace MvcTest
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/site.css",
-                "~/Content/bootstrap/bootstrap.css",
+                "~/Content/bootstrap.css",
                 "~/sorter/style.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
