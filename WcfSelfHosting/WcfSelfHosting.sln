@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWcfServiceLibrary", "TestWcfServiceLibrary\TestWcfServiceLibrary.csproj", "{15B3E0D2-6217-493A-A690-158C497F5318}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfHostingWcf", "SelfHostingWcf\SelfHostingWcf.csproj", "{792AADE4-2751-491E-B416-67A8589A24DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfApplication", "WcfApplication\WcfApplication.csproj", "{BA3F5D87-448B-43A1-A0BB-FA213E235113}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15B3E0D2-6217-493A-A690-158C497F5318}.Release|Any CPU.Build.0 = Release|Any CPU
+		{792AADE4-2751-491E-B416-67A8589A24DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{792AADE4-2751-491E-B416-67A8589A24DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{792AADE4-2751-491E-B416-67A8589A24DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{792AADE4-2751-491E-B416-67A8589A24DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA3F5D87-448B-43A1-A0BB-FA213E235113}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA3F5D87-448B-43A1-A0BB-FA213E235113}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA3F5D87-448B-43A1-A0BB-FA213E235113}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA3F5D87-448B-43A1-A0BB-FA213E235113}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
