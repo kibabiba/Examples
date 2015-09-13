@@ -214,3 +214,5 @@ pip-log.txt
 #Mr Developer
 .mr.developer.cfg
 /MvcTest/packages
+/MvcTest/.vs/config
+packages
