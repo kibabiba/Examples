@@ -19,7 +19,7 @@ namespace ConsoleApplication1
             Console.ReadKey();
         }
 
-        public static async Task<IEnumerable<int>> GetDataAsync()
+        private static async Task<IEnumerable<int>> GetDataAsync()
         {
             var p1 = GetAllLogins();
             var p2 = GetFraudLogin();
@@ -27,7 +27,7 @@ namespace ConsoleApplication1
             return (await p1).Intersect(await p2);
         }
 
-        public static async Task<int[]> GetAllLogins()
+        private static async Task<int[]> GetAllLogins()
         {
             return await Task.Run(() =>
             {
@@ -36,7 +36,7 @@ namespace ConsoleApplication1
             });
         }
 
-        public static async Task<int[]> GetFraudLogin()
+        private static async Task<int[]> GetFraudLogin()
         {
             return await Task.Run(() =>
             {
