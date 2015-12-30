@@ -14,9 +14,10 @@ namespace ConsoleApplication1
         {
             var time = new Stopwatch();
             time.Start();
-
             Console.WriteLine(time.Elapsed);
+
             GetDataAsync().Result.ToList().ForEach(Console.WriteLine);
+
             Console.WriteLine(time.Elapsed);
             Console.ReadKey();
         }
