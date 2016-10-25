@@ -1,0 +1,25 @@
+    public class InMemoryCacher
+    {
+        private readonly string _cacheKey;
+        private readonly TimeSpan _offset;
+
+        public InMemoryCacher(string cacheKey, TimeSpan offset)
+        {
+            _cacheKey = cacheKey;
+            _offset = offset;
+        }
+
+        public T GetDataFromCacheOrDataSourceT(FuncT getDataDelegate) where T  class
+        {
+            var data = (T)MemoryCache.Default.Get(_cacheKey);
+            if (data == null)
+            {
+                data = getDataDelegate();
+                MemoryCache.Default.Add(_cacheKey, data, new CacheItemPolicy
+                {
+                    AbsoluteExpiration = DateTimeOffset.Now.Add(_offset)
+                });
+            }
+            return data;
+        }
+    }
