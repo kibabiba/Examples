@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>TypeScript Compile Demo</title>
+</head>
+<body>
+    <h1>TypeScript Compile Demo</h1>
+    <p>This is a demo of <a href="https://github.com/niutech/typescript-compile">TypeScript Compile</a>. Have a look at the source code.</p>
+    <script type="text/typescript">
+        module Sayings {
+            export class Greeter {
+                greeting: string;
+                constructor (message: string) {
+                    this.greeting = message;
+                }
+                greet() {
+                    return "Hello, " + this.greeting;
+                }
+            }
+        }
+    </script>
+    <script type="text/typescript">
+        var greeter = new Sayings.Greeter('world');
+        var button = document.createElement('button')
+        button.innerHTML = "Say Hello"
+        button.onclick = function() {
+                alert(greeter.greet())
+        }
+        document.body.appendChild(button)
+    </script>
+    <script type="text/typescript" src="demo.ts"></script>
+    <script type="text/javascript" src="/js/typescript.min.js"></script>
+    <script type="text/javascript" src="/js/typescript.compile.min.js"></script>
+</body>
+</html>

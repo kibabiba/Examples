@@ -1,27 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Moq;
 
 namespace ConsoleApplication4
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            NameValueCollection nvc = new NameValueCollection()
-{
-  {"key1", "value1"},
-  {"key1", "value11"},
-  {"key2", "value2"},
-  {"key3", "value3"}
-};
+            {
+                var trader = new MataTraderLibrary(Factory.GetTrader());
+                Console.WriteLine(trader.GetName());
+            }
+            {
+                var itrader = new Mock<ITrader>();
+                itrader.Setup(p => p.Name).Returns("HuyTrader");
+                var trader = new MataTraderLibrary(itrader.Object);
+                Console.WriteLine(trader.GetName());
+            }
 
-            nvc["key1"] = "huy";
-
-            Console.WriteLine(nvc["key1"]);
+            Console.ReadKey();
         }
 
 
@@ -40,7 +38,7 @@ namespace ConsoleApplication4
             }
         }
 
-        public class Factory
+        private static class Factory
         {
             public static ITrader GetTrader()
             {
@@ -53,18 +51,19 @@ namespace ConsoleApplication4
             string Name { get; }
         }
 
+        // ReSharper disable once UnusedMember.Global
         public class MetaTrader : ITrader
         {           
             public string Name
             {
                 get
                 {
-                    return "MetaTrader";
+                    throw new NotImplementedException();
                 } 
             }
         }
 
-        public class HuyTrader : ITrader
+        private class HuyTrader : ITrader
         {
             public string Name
             {

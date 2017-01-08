@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ObserverEvent
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     class Program
     {
         static void Main()
@@ -23,8 +24,8 @@ namespace ObserverEvent
 
     public abstract class Subject
     {
-        public string Name = "Ololo";
-        public int Balance = 10;
+        public const string Name = "Ololo";
+        public const int Balance = 10;
     }
 
     public class SubjectEvent : Subject //Реализация обзервера на эвентах C#
@@ -72,7 +73,7 @@ namespace ObserverEvent
     {
         public void DoSomething(Subject subject)
         {
-            Console.WriteLine(subject.Name);
+            Console.WriteLine(Subject.Name);
         }
     }
 
@@ -80,7 +81,7 @@ namespace ObserverEvent
     {
         public void DoSomething(Subject subject)
         {
-            Console.WriteLine(subject.Balance);
+            Console.WriteLine(Subject.Balance);
         }
     }
 }
