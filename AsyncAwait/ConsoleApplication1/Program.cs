@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     class Program
     {
         static void Main()
@@ -19,7 +20,7 @@ namespace ConsoleApplication1
             Console.ReadKey();
         }
 
-        public static async Task<IEnumerable<int>> GetDataAsync()
+        private static async Task<IEnumerable<int>> GetDataAsync()
         {
             var p1 = GetAllLogins();
             var p2 = GetFraudLogin();
@@ -27,18 +28,18 @@ namespace ConsoleApplication1
             return (await p1).Intersect(await p2);
         }
 
-        public static async Task<int[]> GetAllLogins()
+        private static Task<int[]> GetAllLogins()
         {
-            return await Task.Run(() =>
+            return Task.Run(() =>
             {
                 Thread.Sleep(5000);
                 return new[] { 1005, 105980 };
             });
         }
 
-        public static async Task<int[]> GetFraudLogin()
+        private static Task<int[]> GetFraudLogin()
         {
-            return await Task.Run(() =>
+            return Task.Run(() =>
             {
                 Thread.Sleep(5000);
                 return new []{ 105980 };
