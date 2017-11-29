@@ -1,0 +1,31 @@
+﻿@model AppMVCTest.Models.MessageViewModel
+
+
+    <h3>Add new message Form</h3>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName)
+            @(Request.IsAuthenticated ? Html.TextBoxFor(m=> m.UserName, new {@class = "form-control", @readonly = "readonly"}) : Html.TextBoxFor(m => m.UserName, new {@class = "form-control"}))
+            @Html.ValidationMessageFor(model => model.UserName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.MsgText)
+            @Html.TextAreaFor(m => m.MsgText, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MsgText)
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        if (!string.IsNullOrEmpty((string)ViewData["Error"]))
+        {
+            <div class="alert alert-danger" role="alert">
+                @ViewBag.Error
+            </div>
+        }
+        if (!string.IsNullOrEmpty((string)ViewData["Message"]))
+        {
+            <div class="alert alert-info" role="alert">
+                @ViewBag.Message
+            </div>
+        }
+    }

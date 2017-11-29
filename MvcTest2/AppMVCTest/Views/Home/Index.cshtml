@@ -1,0 +1,24 @@
+﻿@model AppMVCTest.Models.MessageViewModel
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<br />
+
+<ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#newMsg">Add new Message</a></li>
+    <li><a data-toggle="tab" href="#msgList">List of Messages</a></li>
+</ul>
+
+<div class="tab-content">
+    <div id="newMsg" class="tab-pane fade in active">
+        @Html.Partial("NewMessage", Model, ViewData)
+    </div>
+    <div id="msgList" class="tab-pane fade">
+        @Html.Partial("MessageList", Model)
+    </div>
+</div>
+@section scripts
+{
+    @Scripts.Render("~/bundles/jqueryval")
+}
