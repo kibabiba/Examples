@@ -8,26 +8,19 @@ namespace ConsoleApplication4
     {
         static void Main()
         {
-            {
-                var trader = new MataTraderLibrary(Factory.GetTrader());
-                Console.WriteLine(trader.GetName());
-            }
-            {
-                var itrader = new Mock<ITrader>();
-                itrader.Setup(p => p.Name).Returns("HuyTrader");
-                var trader = new MataTraderLibrary(itrader.Object);
-                Console.WriteLine(trader.GetName());
-            }
+            var iTrader = new Mock<ITrader>();
+            iTrader.Setup(p => p.Name).Returns("HuyTrader");
+            var trader = new MetaTraderLibrary(iTrader.Object);
+            Console.WriteLine(trader.GetName());
 
             Console.ReadKey();
         }
 
-
-        public class MataTraderLibrary
+        public class MetaTraderLibrary
         {
             private readonly ITrader _trader;
 
-            public MataTraderLibrary(ITrader trader)
+            public MetaTraderLibrary(ITrader trader)
             {
                 _trader = trader;
             }
@@ -38,40 +31,19 @@ namespace ConsoleApplication4
             }
         }
 
-        private static class Factory
-        {
-            public static ITrader GetTrader()
-            {
-               return new HuyTrader();
-            }
-        }
-
         public interface ITrader
         {
             string Name { get; }
         }
 
-        // ReSharper disable once UnusedMember.Global
-        public class MetaTrader : ITrader
+        public class Mt4Trader : ITrader
         {           
-            public string Name
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                } 
-            }
+            public string Name => throw new NotImplementedException();
         }
 
-        private class HuyTrader : ITrader
+        public class Mt5Trader : ITrader
         {
-            public string Name
-            {
-                get
-                {
-                    return "HuyTrader";
-                }
-            }
+            public string Name => throw new NotImplementedException();
         }
     }
 }

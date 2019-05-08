@@ -8,11 +8,11 @@ namespace MoqTestProject
     public class TestExample
     {
         [TestMethod]
-        public void TestMethod1()
+        public void GetNameTest()
         {
-            var itrader = new Mock<Program.ITrader>();
-            itrader.Setup(p => p.Name).Returns("huemock");
-            var trader = new Program.MataTraderLibrary(itrader.Object);
+            var iTrader = new Mock<Program.ITrader>();
+            iTrader.Setup(p => p.Name).Returns("huemock");
+            var trader = new Program.MetaTraderLibrary(iTrader.Object);
             Assert.AreEqual("huemock", trader.GetName());
         }
     }
