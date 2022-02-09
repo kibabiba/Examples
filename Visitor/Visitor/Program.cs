@@ -39,7 +39,7 @@ namespace Visitor
         public void Visit(IVisitable<IPerson> target)
         {
             var balance = ((IPerson)target).Balance -= 2000;
-            Console.WriteLine("После ГИБДД у Коляна осталось {0} рублей", balance);
+            Console.WriteLine($"После ГИБДД у Коляна осталось {balance} рублей");
         }
     }
 
@@ -48,7 +48,7 @@ namespace Visitor
         public void Visit(IVisitable<IPerson> target)
         {
             var balance = ((IPerson)target).Balance -= 1000;
-            Console.WriteLine("После коллекторов у Коляна осталось {0} рублей", balance);
+            Console.WriteLine($"После коллекторов у Коляна осталось {balance} рублей");
         }
     }
 
