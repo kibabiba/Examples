@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace Visitor
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     class Program
     {
         static void Main()
