@@ -21,7 +21,7 @@ namespace Visitor
 
     public interface IVisitor
     {
-        void Visit(Kolyan kolyan);
+        void Visit(IVisitable target);
     }
 
     public interface IVisitable
@@ -32,19 +32,19 @@ namespace Visitor
 
     public class Police : IVisitor
     {
-        public void Visit(Kolyan kolyan)
+        public void Visit(IVisitable target)
         {
-            kolyan.Balance -= 1000;
-            Console.WriteLine("После ГИБДД у Коляна осталось {0} рублей", kolyan.Balance);
+            target.Balance -= 1000;
+            Console.WriteLine("После ГИБДД у Коляна осталось {0} рублей", target.Balance);
         }
     }
 
     public class Collectors : IVisitor
     {
-        public void Visit(Kolyan kolyan)
+        public void Visit(IVisitable target)
         {
-            kolyan.Balance -= 2000;
-            Console.WriteLine("После коллекторов у Коляна осталось {0} рублей", kolyan.Balance);
+            target.Balance -= 2000;
+            Console.WriteLine("После коллекторов у Коляна осталось {0} рублей", target.Balance);
         }
     }
 
