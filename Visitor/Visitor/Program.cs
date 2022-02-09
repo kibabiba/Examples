@@ -7,7 +7,7 @@ namespace Visitor
     {
         static void Main()
         {
-            IVisitable kolyan = new Kolyan { Balance = 5000 };
+            var kolyan = new Kolyan { Balance = 5000 };
             var visitors = new List<IVisitor> {new Police(), new Collectors()};
             foreach (var visitor in visitors)
             {
@@ -26,16 +26,20 @@ namespace Visitor
 
     public interface IVisitable
     {
-        int Balance { get; set; }
         void Accept(IVisitor visitor);
+    }
+
+    public interface IPerson
+    {
+        int Balance { get; set; }
     }
 
     public class Police : IVisitor
     {
         public void Visit(IVisitable target)
         {
-            target.Balance -= 1000;
-            Console.WriteLine("После ГИБДД у Коляна осталось {0} рублей", target.Balance);
+            var balance = ((IPerson)target).Balance -= 2000;
+            Console.WriteLine("После ГИБДД у Коляна осталось {0} рублей", balance);
         }
     }
 
@@ -43,12 +47,12 @@ namespace Visitor
     {
         public void Visit(IVisitable target)
         {
-            target.Balance -= 2000;
-            Console.WriteLine("После коллекторов у Коляна осталось {0} рублей", target.Balance);
+            var balance = ((IPerson)target).Balance -= 1000;
+            Console.WriteLine("После коллекторов у Коляна осталось {0} рублей", balance);
         }
     }
 
-    public class Kolyan : IVisitable
+    public class Kolyan : IVisitable, IPerson
     {
         public int Balance { get; set; }
         public void Accept(IVisitor visitor)
