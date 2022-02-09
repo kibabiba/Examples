@@ -14,7 +14,7 @@ namespace Visitor
             {
                 kolyan.Accept(visitor);
             }
-            Console.WriteLine("Итого у Коляна осталось {0}", kolyan.Balance);
+            Console.WriteLine($"Итого у Коляна осталось {kolyan.Balance}");
 
             Console.ReadKey();
         }
