@@ -3,12 +3,13 @@ using System.Collections.Generic;
 
 namespace Visitor
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     class Program
     {
         static void Main()
         {
             var kolyan = new Kolyan { Balance = 5000 };
-            var visitors = new List<IVisitor<IPerson>> {new Police(), new Collectors()};
+            var visitors = new List<IVisitor> {new Police(), new Collectors()};
             foreach (var visitor in visitors)
             {
                 kolyan.Accept(visitor);
@@ -19,14 +20,14 @@ namespace Visitor
         }
     }
 
-    public interface IVisitor<T>
+    public interface IVisitor
     {
-        void Visit(IVisitable<T> target);
+        void Visit(IVisitable target);
     }
 
-    public interface IVisitable<T>
+    public interface IVisitable
     {
-        void Accept(IVisitor<T> visitor);
+        void Accept(IVisitor visitor);
     }
 
     public interface IPerson
@@ -34,28 +35,28 @@ namespace Visitor
         int Balance { get; set; }
     }
 
-    public class Police : IVisitor<IPerson>
+    public class Police : IVisitor
     {
-        public void Visit(IVisitable<IPerson> target)
+        public void Visit(IVisitable target)
         {
             var balance = ((IPerson)target).Balance -= 2000;
-            Console.WriteLine("После ГИБДД у Коляна осталось {0} рублей", balance);
+            Console.WriteLine($"После ГИБДД у Коляна осталось {balance} рублей");
         }
     }
 
-    public class Collectors : IVisitor<IPerson>
+    public class Collectors : IVisitor
     {
-        public void Visit(IVisitable<IPerson> target)
+        public void Visit(IVisitable target)
         {
             var balance = ((IPerson)target).Balance -= 1000;
-            Console.WriteLine("После коллекторов у Коляна осталось {0} рублей", balance);
+            Console.WriteLine($"После коллекторов у Коляна осталось {balance} рублей");
         }
     }
 
-    public class Kolyan : IVisitable<IPerson>, IPerson
+    public class Kolyan : IVisitable, IPerson
     {
         public int Balance { get; set; }
-        public void Accept(IVisitor<IPerson> visitor)
+        public void Accept(IVisitor visitor)
         {
             visitor.Visit(this);
         }
