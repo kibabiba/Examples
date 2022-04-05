@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleApplication1
@@ -9,10 +8,10 @@ namespace ConsoleApplication1
     // ReSharper disable once ClassNeverInstantiated.Global
     class Program
     {
-        static void Main()
+        static async Task Main()
         {
             Console.WriteLine(DateTime.Now);
-            foreach (var login in GetDataAsync().Result)
+            foreach (var login in await GetDataAsync())
             {
                 Console.WriteLine(login);
             }
@@ -22,27 +21,27 @@ namespace ConsoleApplication1
 
         private static async Task<IEnumerable<int>> GetDataAsync()
         {
-            var p1 = GetAllLogins();
-            var p2 = GetFraudLogin();
+            var allLogins =  GetAllLoginsAsync();
+            var fraudLogin = GetFraudLoginAsync();
 
-            return (await p1).Intersect(await p2);
+            return (await allLogins).Except(await fraudLogin);
         }
 
-        private static Task<int[]> GetAllLogins()
+        private static Task<int[]> GetAllLoginsAsync()
         {
             return Task.Run(() =>
             {
-                Thread.Sleep(5000);
+                Task.Delay(new TimeSpan(0, 0, 5)).Wait();
                 return new[] { 1005, 105980 };
             });
         }
 
-        private static Task<int[]> GetFraudLogin()
+        private static Task<int[]> GetFraudLoginAsync()
         {
             return Task.Run(() =>
             {
-                Thread.Sleep(5000);
-                return new []{ 105980 };
+                Task.Delay(new TimeSpan(0, 0, 5)).Wait();
+                return new[] { 105980 };
             });
         }
     }
